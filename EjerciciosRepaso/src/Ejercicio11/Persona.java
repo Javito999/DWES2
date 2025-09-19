@@ -3,13 +3,16 @@ package Ejercicio11;
 public class Persona {
 
 	private String nombre;
-	
+
 	private Integer edad;
 
 	public Persona(String nombre, Integer edad) {
-		super();
-		this.nombre = nombre;
-		this.edad = edad;
+		/*
+		 * super(); this.nombre = nombre; this.edad = edad;
+		 */
+		if (nombre == null || nombre.trim().isEmpty()) {
+
+		}
 	}
 
 	public String getNombre() {
@@ -32,8 +35,5 @@ public class Persona {
 	public String toString() {
 		return "Persona [nombre=" + nombre + ", edad=" + edad + "]";
 	}
-	
-	
-	
-	
+
 }
