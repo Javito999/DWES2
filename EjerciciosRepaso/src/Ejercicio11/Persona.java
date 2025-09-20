@@ -7,12 +7,18 @@ public class Persona {
 	private Integer edad;
 
 	public Persona(String nombre, Integer edad) {
-		/*
-		 * super(); this.nombre = nombre; this.edad = edad;
-		 */
 		if (nombre == null || nombre.trim().isEmpty()) {
-
-		}
+            this.nombre = "Anónimo";
+        } else {
+            this.nombre = nombre;
+        }
+        
+        // Control de edad
+        if (edad < 0) {
+            this.edad = 99;
+        } else {
+            this.edad = edad;
+        }
 	}
 
 	public String getNombre() {
