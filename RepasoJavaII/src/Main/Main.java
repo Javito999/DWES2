@@ -17,7 +17,7 @@ public class Main {
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
 		VistaClientes vc = new VistaClientes();
-		vc.menuRecuperaNOmbreTelefono();
+		vc.menuInsertaCliente();
 
 	}
 
