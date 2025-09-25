@@ -9,7 +9,7 @@ import Modelo.TipoModelo;
 public class TipoControlador {
 
 	public Integer crearNuevoRegistro(int idPublicacion, String titulo, String autor, int nroEdicion,
-			double precio, int stock, int idTipo) throws ClassNotFoundException, SQLException {
+			double precio, int stock, String idTipo) throws ClassNotFoundException, SQLException {
 
 		TipoModelo tm = new TipoModelo();
 
@@ -19,11 +19,11 @@ public class TipoControlador {
 	}
 
 	public ArrayList<TipoDTO> listarRegistroLibros(Integer idPublicacion, String titulo, String autor, int numEdicion,
-			double precio) throws ClassNotFoundException, SQLException {
+			double precio, String idTipo) throws ClassNotFoundException, SQLException {
 
 		TipoModelo tm = new TipoModelo();
 
-		return tm.listarRegistroLibros(idPublicacion, titulo, autor, numEdicion, precio);
+		return tm.listarRegistroLibros(idPublicacion, titulo, autor, numEdicion, precio, idTipo);
 
 	}
 

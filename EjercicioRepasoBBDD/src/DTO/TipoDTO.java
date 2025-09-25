@@ -2,18 +2,18 @@ package DTO;
 
 public class TipoDTO {
 
-	private Integer idTipo;
+	private String idTipo;
 
-	public TipoDTO(Integer idTipo) {
+	public TipoDTO(String idTipo) {
 		super();
 		this.idTipo = idTipo;
 	}
 
-	public Integer getIdTipo() {
+	public String getIdTipo() {
 		return idTipo;
 	}
 
-	public void setIdTipo(Integer idTipo) {
+	public void setIdTipo(String idTipo) {
 		this.idTipo = idTipo;
 	}
 

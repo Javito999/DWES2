@@ -14,9 +14,9 @@ import Utils.DBUtils;
 public class TipoModelo {
 
 	public Integer crearNuevoRegistro(int idPublicacion, String titulo, String autor, int nroEdicion,
-			double precio, int stock, int idTipo) throws ClassNotFoundException, SQLException {
+			double precio, int stock, String idTipo) throws ClassNotFoundException, SQLException {
 
-		String query = "INSERT INTO publicacion (idPublicacion," + "titulo, autor, nroEdicion, precio, idTipo)"
+		String query = "INSERT INTO publicacion (idPublicacion," + "titulo, autor, nroEdicion, precio, stock, idTipo)"
 				+ "VALUES (?,?,?,?,?,?,?)";
 
 		Connection connection = DBUtils.conexionBBDD();
@@ -32,7 +32,7 @@ public class TipoModelo {
 		ps.setInt(4, nroEdicion);
 		ps.setDouble(5, precio);
 		ps.setInt(6, stock);
-		ps.setInt(7, idTipo);
+		ps.setString(7, idTipo);
 
 		resultado = ps.executeUpdate();
 		connection.close();
@@ -42,7 +42,7 @@ public class TipoModelo {
 	}
 
 	public ArrayList<TipoDTO> listarRegistroLibros(Integer idPublicacion, String titulo, String autor, int numEdicion,
-			double precio) throws ClassNotFoundException, SQLException {
+			double precio, String idTipo) throws ClassNotFoundException, SQLException {
 
 		Connection connectionBD = DBUtils.conexionBBDD();
 
@@ -61,7 +61,7 @@ public class TipoModelo {
 
 		while (libros.next()) {
 
-			TipoDTO t = new TipoDTO(libros.getInt("idPublicacion"));
+			TipoDTO t = new TipoDTO(libros.getNString(numEdicion));
 
 			listaLibros.add(t);
 

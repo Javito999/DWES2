@@ -8,14 +8,11 @@ import Controlador.TipoControlador;
 import DTO.TipoDTO;
 
 public class TipoVista {
-	
-	
+
 	public void menuCreaNuevoRegistro() throws ClassNotFoundException, SQLException {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
-		
-		
+
 		System.out.println("Por favor, introduzca el idPublicacion");
 		Integer idPublicacion = sc.nextInt();
 		sc.nextLine();
@@ -31,28 +28,19 @@ public class TipoVista {
 		System.out.println("Por favor, introduzca el stock");
 		int stock = sc.nextInt();
 		System.out.println("Por favor, introduzca el idTipo");
-		Integer idTipo = sc.nextInt();
-		sc.nextLine();
-		
+		String idTipo = sc.nextLine();
+
 		TipoControlador tc = new TipoControlador();
-		
-		int resultado = tc.crearNuevoRegistro(idPublicacion,
-				titulo, autor, nroEdicion, precio, stock, idTipo);
-		
-				
+
+		int resultado = tc.crearNuevoRegistro(idPublicacion, titulo, autor, nroEdicion, precio, stock, idTipo);
+
 		if (resultado == 1) {
 			System.out.println("Se ha introducido correctamente");
 		} else {
 			System.out.println("Se ha producido un error al introducir el cliente");
 		}
-		
-		
+
 	}
-	
-	
-	
-	
-	
 
 	public void menuListarLibrosPorFiltros() throws ClassNotFoundException, SQLException {
 
