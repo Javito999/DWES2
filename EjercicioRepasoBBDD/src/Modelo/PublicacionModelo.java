@@ -23,7 +23,7 @@ public class PublicacionModelo {
 
 		while (libros.next() != false) {
 
-			PublicacionDTO c = new PublicacionDTO(libros.getInt("idPublicacion"),
+			PublicacionDTO c = new PublicacionDTO(libros.getInt("idTipo"), libros.getInt("idPublicacion"),
 					libros.getString("titulo"), libros.getString("autor"),
 							+  libros.getInt("numeroEdicion"), libros.getInt("precio"),
 							false);

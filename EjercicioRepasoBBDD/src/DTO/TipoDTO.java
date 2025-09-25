@@ -1,7 +1,7 @@
 package DTO;
 
 public class TipoDTO {
-	
+
 	private Integer idTipo;
 
 	public TipoDTO(Integer idTipo) {
@@ -16,7 +16,5 @@ public class TipoDTO {
 	public void setIdTipo(Integer idTipo) {
 		this.idTipo = idTipo;
 	}
-	
-	
 
 }

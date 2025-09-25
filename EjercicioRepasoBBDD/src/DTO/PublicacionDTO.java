@@ -2,22 +2,32 @@ package DTO;
 
 public class PublicacionDTO {
 
+	private Integer idTipo;
 	private Integer idPublicacion;
 	private String titulo;
 	private String autor;
 	private Integer numeroEdicion;
 	private double precio;
 	private boolean stock;
-
-	public PublicacionDTO(Integer idPublicacion, String titulo, String autor, Integer numeroEdicion, double precio,
-			boolean stock) {
+	
+	public PublicacionDTO(Integer idTipo, Integer idPublicacion, String titulo, String autor, Integer numeroEdicion,
+			double precio, boolean stock) {
 		super();
+		this.idTipo = idTipo;
 		this.idPublicacion = idPublicacion;
 		this.titulo = titulo;
 		this.autor = autor;
 		this.numeroEdicion = numeroEdicion;
 		this.precio = precio;
 		this.stock = stock;
+	}
+
+	public Integer getIdTipo() {
+		return idTipo;
+	}
+
+	public void setIdTipo(Integer idTipo) {
+		this.idTipo = idTipo;
 	}
 
 	public Integer getIdPublicacion() {
@@ -67,5 +77,11 @@ public class PublicacionDTO {
 	public void setStock(boolean stock) {
 		this.stock = stock;
 	}
+	
+	
+	
+	
+	
+}
 
- }
+	
