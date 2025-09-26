@@ -18,13 +18,6 @@ public class TipoControlador {
 
 	}
 
-	public ArrayList<TipoDTO> listarRegistroLibros(Integer idPublicacion, String titulo, String autor, int numEdicion,
-			double precio, String idTipo) throws ClassNotFoundException, SQLException {
-
-		TipoModelo tm = new TipoModelo();
-
-		return tm.listarRegistroLibros(idPublicacion, titulo, autor, numEdicion, precio, idTipo);
-
-	}
+	
 
 }
