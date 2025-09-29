@@ -2,16 +2,16 @@ package DTO;
 
 public class PublicacionDTO {
 
-	private Integer idTipo;
-	private Integer idPublicacion;
+	private String idTipo;
+	private int idPublicacion;
 	private String titulo;
 	private String autor;
-	private Integer numeroEdicion;
-	private double precio;
-	private boolean stock;
-	
-	public PublicacionDTO(Integer idTipo, Integer idPublicacion, String titulo, String autor, Integer numeroEdicion,
-			double precio, boolean stock) {
+	private int numeroEdicion;
+	private int precio;
+	private int stock;
+
+	public PublicacionDTO(String idTipo, int idPublicacion, String titulo, String autor, int numeroEdicion, int precio,
+			int stock) {
 		super();
 		this.idTipo = idTipo;
 		this.idPublicacion = idPublicacion;
@@ -22,19 +22,19 @@ public class PublicacionDTO {
 		this.stock = stock;
 	}
 
-	public Integer getIdTipo() {
+	public String getIdTipo() {
 		return idTipo;
 	}
 
-	public void setIdTipo(Integer idTipo) {
+	public void setIdTipo(String idTipo) {
 		this.idTipo = idTipo;
 	}
 
-	public Integer getIdPublicacion() {
+	public int getIdPublicacion() {
 		return idPublicacion;
 	}
 
-	public void setIdPublicacion(Integer idPublicacion) {
+	public void setIdPublicacion(int idPublicacion) {
 		this.idPublicacion = idPublicacion;
 	}
 
@@ -54,34 +54,28 @@ public class PublicacionDTO {
 		this.autor = autor;
 	}
 
-	public Integer getNumeroEdicion() {
+	public int getNumeroEdicion() {
 		return numeroEdicion;
 	}
 
-	public void setNumeroEdicion(Integer numeroEdicion) {
+	public void setNumeroEdicion(int numeroEdicion) {
 		this.numeroEdicion = numeroEdicion;
 	}
 
-	public double getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(double precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 
-	public boolean isStock() {
+	public int isStock() {
 		return stock;
 	}
 
-	public void setStock(boolean stock) {
+	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	
-	
-	
-	
-	
-}
 
-	
+}

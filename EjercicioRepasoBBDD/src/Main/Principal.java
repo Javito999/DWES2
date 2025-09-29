@@ -10,7 +10,7 @@ public class Principal {
 
 		TipoVista tv = new TipoVista();
 
-		tv.menuCreaNuevoRegistro();
+		tv.menuBusquedaPorFiltros();
 
 	}
 

@@ -1,6 +1,5 @@
 package Modelo;
 
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,7 +10,7 @@ import DTO.PublicacionDTO;
 import Utils.DBUtils;
 
 public class PublicacionModelo {
-	
+
 	public ArrayList<PublicacionDTO> recuperarNombreLibro() throws ClassNotFoundException, SQLException {
 
 		Connection conexionBD = DBUtils.conexionBBDD();
@@ -23,10 +22,9 @@ public class PublicacionModelo {
 
 		while (libros.next() != false) {
 
-			PublicacionDTO c = new PublicacionDTO(libros.getInt("idTipo"), libros.getInt("idPublicacion"),
-					libros.getString("titulo"), libros.getString("autor"),
-							+  libros.getInt("numeroEdicion"), libros.getInt("precio"),
-							false);
+			PublicacionDTO c = new PublicacionDTO(libros.getString("idTipo"), libros.getInt("idPublicacion"),
+					libros.getString("titulo"), libros.getString("autor"), libros.getInt("numeroEdicion"),
+					libros.getInt("precio"), libros.getInt("stock"));
 			listaLibros.add(c);
 
 		}

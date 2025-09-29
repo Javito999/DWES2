@@ -6,16 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-import DTO.ClienteDTO;
 import DTO.PublicacionDTO;
 import DTO.TipoDTO;
 import Utils.DBUtils;
 
 public class TipoModelo {
 
-	public Integer crearNuevoRegistro(int idPublicacion, String titulo, String autor, int nroEdicion,
-			double precio, int stock, String idTipo) throws ClassNotFoundException, SQLException {
+	public Integer crearNuevoRegistro(int idPublicacion, String titulo, String autor, int nroEdicion, double precio,
+			int stock, String idTipo) throws ClassNotFoundException, SQLException {
 
 		String query = "INSERT INTO publicacion (idPublicacion," + "titulo, autor, nroEdicion, precio, stock, idTipo)"
 				+ "VALUES (?,?,?,?,?,?,?)";
@@ -26,7 +24,6 @@ public class TipoModelo {
 
 		ps = connection.prepareStatement(query);
 
-		
 		ps.setInt(1, idPublicacion);
 		ps.setString(2, titulo);
 		ps.setString(3, autor);
@@ -42,14 +39,14 @@ public class TipoModelo {
 
 	}
 
-	public ArrayList<TipoDTO> listarLibrosPorFiltros(int idPublicacion, String titulo, String autor, int nroEdicion,
-			int precio, int stock, String idTipo) throws ClassNotFoundException, SQLException{
-		
+	public ArrayList<PublicacionDTO> listarLibrosPorFiltros(int idPublicacion, String titulo, String autor,
+			int nroEdicion, int precio, int stock, String idTipo) throws ClassNotFoundException, SQLException {
+
 		String query = "SELECT * FROM publicacion WHERE idpublicacion LIKE ? OR titulo LIKE ? OR autor LIKE ?"
 				+ "OR nroedicion LIKE ? OR precio LIKE ? OR stock LIKE ? OR idtipo LIKE ? ";
-		
+
 		Connection connection = DBUtils.conexionBBDD();
-		
+
 		PreparedStatement ps = connection.prepareStatement(query);
 		ps.setString(1, "%" + idPublicacion + "%");
 		ps.setString(2, "%" + titulo + "%");
@@ -58,29 +55,24 @@ public class TipoModelo {
 		ps.setString(5, "%" + precio + "%");
 		ps.setString(6, "%" + stock + "%");
 		ps.setString(7, "%" + idTipo + "%");
-		
+
 		ResultSet libros = ps.executeQuery();
-		
-		ArrayList<TipoDTO> listaLibros = new ArrayList<>();
-		
+
+		ArrayList<PublicacionDTO> listaLibros = new ArrayList<>();
+
 		while (libros.next()) {
 
-			TipoDTO c = new TipoDTO(libros.getString("idpublicacion"), libros.getString("titulo"),
-					libros.getString("autor"), libros.getInt("nroedicion"),
-					libros.getInt("precio"), libros.getInt("stock"), libros.getString("idtipo"));
+			PublicacionDTO p = new PublicacionDTO(libros.getString("idtipo"), libros.getInt("idpublicacion"),
+					libros.getString("titulo"), libros.getString("autor"), libros.getInt("nroedicion"),
+					libros.getInt("precio"), libros.getInt("stock"));
 
-			listaLibros.add(c);
+			listaLibros.add(p);
 		}
-		
-		
-		
-		return null;
-		
-		
-		
-		
-		
-		
+
+		connection.close();
+
+		return listaLibros;
+
 	}
 
 }
