@@ -1,4 +1,4 @@
-package hora;
+package dimeHora;
 
 import java.time.LocalTime;
 
