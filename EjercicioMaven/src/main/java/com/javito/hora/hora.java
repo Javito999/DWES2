@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalTime;
 
-import dimeHora.DimeHoraActual;
+
 
 /**
  * Servlet implementation class hora
@@ -37,19 +37,20 @@ public class hora extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html");
+		response.setContentType("text/html; charset=UTF-8");
 
-		DimeHoraActual hora = new DimeHoraActual();
-		LocalTime horaLocal = hora.dimeHoraActual();
+		
+		LocalTime horaLocal = LocalTime.now();
 
-		PrintWriter out = response.getWriter();
+	    PrintWriter out = response.getWriter();
+
+	    out.println("<html><body>");
+	    out.println("<h2>La hora actual es: " + horaLocal + "</h2>");
+	    out.println("</body></html>");
 		
-		out.print( horaLocal);
 		
 		
-		
-		
-		doGet(request, response);
+	    doGet(request, response);
 	}
 	
 	public LocalTime dimeHoraActual() {
