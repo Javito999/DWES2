@@ -1,11 +1,15 @@
 <html>
 <body>
-<h1>Pulse aqu� para obtener un n�mero aleatorio</h1>
-    <form action="http://localhost:8080/HoraActual" method="post">
-    	<h3>Pulse aqu� para obtener un
-n�mero aleatorio</h3>
-        <button  type="submit" name="enviar">Enviar</button>
-    </form>
-    
+
+<!--Este será el endpoint que atienda la petición cuando se pulse “Enviar”.
+Tendremos que crear un servlet mapeado a esta dirección -->
+<form action="http://localhost:8080/saludo/Hola" method="post"> <!-- El método
+http usado será “post” dado que es un formulario y queremos que los datos vayan
+en el body -->
+<label for="nombre">Pulsa aquí paa obtener un número aleatorio: </label>
+<br/>
+<br/>
+<input type="submit" id="Enviar" value="Enviar" />
+</form>
 </body>
 </html>

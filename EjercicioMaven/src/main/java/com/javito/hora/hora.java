@@ -6,6 +6,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalTime;
+
+import dimeHora.DimeHoraActual;
 
 /**
  * Servlet implementation class hora
@@ -33,8 +37,27 @@ public class hora extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+
+		DimeHoraActual hora = new DimeHoraActual();
+		LocalTime horaLocal = hora.dimeHoraActual();
+
+		PrintWriter out = response.getWriter();
+		
+		out.print( horaLocal);
+		
+		
+		
+		
 		doGet(request, response);
+	}
+	
+	public LocalTime dimeHoraActual() {
+
+		LocalTime hora = LocalTime.now();
+
+		return hora;
+
 	}
 
 }
