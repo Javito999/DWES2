@@ -7,20 +7,23 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalTime;
+
+
 
 /**
- * Servlet implementation class Fecha
+ * Servlet implementation class fecha
  */
-@WebServlet("/Fecha")
-public class Fecha extends HttpServlet {
+@WebServlet("/fecha")
+public class fecha extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Fecha() {
+    public fecha() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,19 +40,18 @@ public class Fecha extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-	    PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
 
-	   
-	    LocalDateTime ahora = LocalDateTime.now();
-	    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		LocalTime horaLocal = LocalTime.now();
 
-	   
-	    out.println("<html>");
-	    out.println("<body>");
-	    out.println("<h2>La fecha y hora actual es: " + ahora.format(formato) + "</h2>");
-	    out.println("</body>");
-	    out.println("</html>");
+		PrintWriter out = response.getWriter();
+		out.print("<html><body>");
+		out.print("<h3> La hora local es: " + horaLocal + "</h3>");
+		out.print("</html></body>");
+		
+		
+		
+		
 		doGet(request, response);
 	}
 

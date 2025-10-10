@@ -1,4 +1,4 @@
-package com.javito.hora;
+package com.javito.numAleatorio;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,21 +7,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalTime;
-
-
 
 /**
- * Servlet implementation class hora
+ * Servlet implementation class numAleatorio
  */
-@WebServlet("/hora")
-public class hora extends HttpServlet {
+@WebServlet("/numAleatorio")
+public class numAleatorio extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public hora() {
+    public numAleatorio() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -37,28 +35,14 @@ public class hora extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
-
+		response.setContentType("text/html");
+		Double numAleatorio = Math.random();
+		PrintWriter out = response.getWriter();
+		out.print("<html><body>");
+		out.print("<h3> Aquí tienes tu número: " + numAleatorio + "</h3>");
+		out.print("</html></body>");
 		
-		LocalTime horaLocal = LocalTime.now();
-
-	    PrintWriter out = response.getWriter();
-
-	    out.println("<html><body>");
-	    out.println("<h2>La hora actual es: " + horaLocal + "</h2>");
-	    out.println("</body></html>");
-		
-		
-		
-	    doGet(request, response);
-	}
-	
-	public LocalTime dimeHoraActual() {
-
-		LocalTime hora = LocalTime.now();
-
-		return hora;
-
+		doGet(request, response);
 	}
 
 }

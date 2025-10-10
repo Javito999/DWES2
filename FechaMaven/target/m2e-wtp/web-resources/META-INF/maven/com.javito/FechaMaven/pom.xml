@@ -5,39 +5,31 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.javito</groupId>
-  <artifactId>EjercicioMaven</artifactId>
+  <artifactId>FechaMaven</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>EjercicioMaven Maven Webapp</name>
+  <name>FechaMaven Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>24</maven.compiler.source>
-    <maven.compiler.target>24</maven.compiler.target>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
   </properties>
 
   <dependencies>
-  <dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
-  
-    <dependency>
-    
-    <groupId>jakarta.servlet</groupId>
-    <artifactId>jakarta.servlet-api</artifactId>
-    <version>6.0.0</version>
-    <scope>provided</scope>
-	</dependency>
   </dependencies>
 
   <build>
-    <finalName>EjercicioMaven</finalName>
+    <finalName>FechaMaven</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
@@ -73,4 +65,3 @@
     </pluginManagement>
   </build>
 </project>
-
