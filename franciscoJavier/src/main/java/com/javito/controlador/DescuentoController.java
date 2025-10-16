@@ -8,19 +8,17 @@ import com.javito.modelo.DescuentoModelo;
 
 @Controller
 public class DescuentoController {
-	@RequestMapping(value="/descuento")
-	public String Descuento() {
-		return "descuento";
-	}
-	
-	@RequestMapping(value="/descuento")
-		public String obtenerDescuento(Model model) {
+
+	@RequestMapping(value = "/descuento")
+
+	public String obtenerDescuento(Model model) {
 		DescuentoModelo dm = new DescuentoModelo();
-		
-		
-		
-		return null;
-		
-		
+
+		int num = dm.generadescuento();
+
+		model.addAttribute("descuentoGenerado", num);
+
+		return "descuento";
+
 	}
 }
