@@ -7,7 +7,7 @@ public class DescuentoModelo {
 	public int generadescuento() {
 		Random random = new Random();
 		
-		return random.nextInt(20) + 2;
+		return random.nextInt(18) + 2;
 	}
 
 }
