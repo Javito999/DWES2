@@ -31,6 +31,8 @@ public class ServletPrincipal extends HttpServlet {
 		Persona p = new Persona("javito", 33);
 		request.setAttribute("persona", p);
 		
+		
+		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/Hola.jsp");
 		dispatcher.forward(request, response);
 	}
