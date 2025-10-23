@@ -15,28 +15,22 @@ public class ConsultaDatos {
 
 		FileReader fr = new FileReader(f);
 		BufferedReader br = new BufferedReader(fr);
+		int contador = 0;
 
 		String linea;
-
 		while ((linea = br.readLine()) != null) {
 
-			if (linea.contains(nombre)) {
+			String[] partes = linea.split("-");
 
-				String[] arrayJugador = linea.split("-");
-					
-				int carta = Integer.parseInt(arrayJugador[1]);
-				
-				br.close();
-				return carta;
-				
+			if (partes.length == 2) {
+				String jugador = partes[0].trim();
+
+				if (jugador.equalsIgnoreCase(nombre)) {
+					contador++;
+				}
 			}
-
 		}
-
-		br.close();
-
-		return null;
+		return contador;
 
 	}
-
 }

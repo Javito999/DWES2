@@ -10,13 +10,7 @@ public class Cartas {
 
 		ConsultaDatos consultaDatos = new ConsultaDatos();
 
-		
-
-		consultaDatos.consultaCartas(nombre);
-
-		
-		
-		
+		return consultaDatos.consultaCartas(nombre);
 
 	}
 

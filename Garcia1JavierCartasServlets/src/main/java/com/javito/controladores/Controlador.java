@@ -8,7 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import com.javito.negocio.cartas;
+import com.javito.negocio.Cartas;
+
 
 /**
  * Servlet implementation class Controlador
@@ -44,9 +45,9 @@ public class Controlador extends HttpServlet {
 
 		String nombre = request.getParameter("nombre");
 
-		cartas mnc = new cartas();
+		Cartas c = new Cartas();
 
-		int cartas = mnc.muestraCartas(nombre);
+		int cartas = c.muestraCartas(nombre);
 
 		request.setAttribute("cartas", cartas);
 		request.setAttribute("nombre", nombre);
