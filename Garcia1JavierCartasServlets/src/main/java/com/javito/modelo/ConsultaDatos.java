@@ -29,7 +29,7 @@ public class ConsultaDatos {
 					contador++;
 				}
 			}
-		}
+		}br.close();
 		return contador;
 
 	}
