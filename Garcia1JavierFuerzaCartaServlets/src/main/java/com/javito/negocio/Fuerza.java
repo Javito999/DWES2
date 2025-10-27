@@ -1,18 +1,16 @@
 package com.javito.negocio;
 
+import java.io.IOException;
+
 import com.javito.modelo.ConsultaDatos;
 
 public class Fuerza {
 
-	public int calculaFuerza(String nombre) {
-		
-		
+	public double calculaFuerza(String nombre) throws NumberFormatException, IOException {
+
 		ConsultaDatos consultaDatos = new ConsultaDatos();
-		
-		
-		
-		
-		return 0;
+
+		return consultaDatos.consultaFuerza(nombre);
 	}
-	
+
 }

@@ -1,11 +1,14 @@
 package com.javito.controladores;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+import com.javito.negocio.Fuerza;
 
 /**
  * Servlet implementation class Controlador
@@ -34,8 +37,20 @@ public class Controlador extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		String nombre = request.getParameter("nombre");
+		
+		Fuerza fuerza = new Fuerza();
+		
+		double f = fuerza.calculaFuerza(nombre);
+		
+		request.setAttribute("fuerza", fuerza);
+		request.setAttribute("nombre", nombre);
+		
+		RequestDispatcher dispatcher = 
+				getServletContext().getRequestDispatcher("/WEB-INF/fuerza.jsp");
+		dispatcher.forward(request, response);
+		
 	}
 
 }
