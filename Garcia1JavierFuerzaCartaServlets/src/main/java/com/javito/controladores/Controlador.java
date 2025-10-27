@@ -44,7 +44,7 @@ public class Controlador extends HttpServlet {
 		
 		double f = fuerza.calculaFuerza(nombre);
 		
-		request.setAttribute("fuerza", fuerza);
+		request.setAttribute("fuerza", f);
 		request.setAttribute("nombre", nombre);
 		
 		RequestDispatcher dispatcher = 

@@ -5,16 +5,22 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ConsultaDatos {
+import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
-	@SuppressWarnings("resource")
-	public double consultaFuerza(String nombre) throws NumberFormatException, IOException {
+@Component
+public class ConsultaDatos implements IConsultaDatos {
 
-		String path = Thread.currentThread().getContextClassLoader().getResource("magic.txt").getPath();
-		File f = new File(path);
+	@Override
+	public Double consultaFuerza(String nombre) throws NumberFormatException, IOException {
+
+		File f = ResourceUtils.getFile("classpath:cartas.txt");
+		
 		FileReader fr = new FileReader(f);
+		
 		BufferedReader br = new BufferedReader(fr);
-		String linea;
+		
+String linea;
 		
 		double coste = 0;
 		double vida = 0;

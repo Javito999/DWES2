@@ -5,9 +5,9 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>La fuerza que tienes</title>
+<title>Calculo descuento total</title>
 </head>
 <body>
-La carta del  ${nombre} tiene un índice de fuerza ${fuerza}
+El descuento a aplicar al usuario ${nombre} es ${fuerza}
 </body>
 </html>
