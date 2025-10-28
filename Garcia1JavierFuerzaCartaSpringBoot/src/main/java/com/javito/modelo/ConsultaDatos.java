@@ -18,31 +18,31 @@ public class ConsultaDatos implements IConsultaDatos {
 		
 		FileReader fr = new FileReader(f);
 		
+		@SuppressWarnings("resource")
 		BufferedReader br = new BufferedReader(fr);
 		
 String linea;
 		
-		double coste = 0;
-		double vida = 0;
-		double dano = 0;
-		double indice = (dano * vida) / coste;
+		
+		
 
 		while ((linea = br.readLine()) != null) {
 			String[] partes = linea.split("-");
 			if (partes.length == 4) {
 				String nombreUsuario = partes[0].trim();
-				 coste = Double.parseDouble(partes[1].trim());
-				 dano = Double.parseDouble(partes[2].trim());
-				 vida = Double.parseDouble(partes[3].trim());
+				double coste = Double.parseDouble(partes[1].trim());
+				double dano = Double.parseDouble(partes[2].trim());
+				double vida = Double.parseDouble(partes[3].trim());
+				double indice = (dano * vida) / coste;
 
 				if (nombreUsuario.equalsIgnoreCase(nombre)) {
 					
-					return indice;
+					return Math.floor(indice);
 				}
 			}
 			
 		}br.close();
-		return indice;
+		return (double) 0;
 		
 
 	}
