@@ -27,7 +27,7 @@ public class ConsultaDatos {
 
 				if (nombreUsuario.equalsIgnoreCase(nombre)) {
 
-					return Math.floor(indice);
+					return indice;
 				}
 			}
 
