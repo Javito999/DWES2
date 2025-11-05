@@ -5,7 +5,7 @@
 </head>
 <body>
 Introduzca el nombre del usuario 
-<form action="http://localhost:8080/Garcia1JavierCastronegorServlets/fuerza"
+<form action="http://localhost:8080/Garcia1JavierFuerzaCartaServlets/fuerza"
 method="POST">
 <input type="text" name="nombre">
 <input type="submit">
