@@ -37,7 +37,7 @@ public class Controlador extends HttpServlet {
 		// TODO Auto-generated method stub
 		List<DesplegableDTO> jugadores = Rol.obtenerJugadores();
 		request.setAttribute("opcionesDesplegable", jugadores);
-		RequestDispatcher rd = request.getRequestDispatcher("listaJugadores.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listaJugadores.jsp");
 		rd.forward(request, response);
 	}
 
@@ -48,7 +48,7 @@ public class Controlador extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int id = Integer.parseInt(request.getParameter("listaJugadores"));
+		int id = Integer.parseInt(request.getParameter("idJugador"));
 		String nombreJugador = Rol.obtenerNombreJugadorPorId(id);
 		String rol = Rol.asignarRolAleatorio();
 
@@ -56,7 +56,7 @@ public class Controlador extends HttpServlet {
 		request.setAttribute("nombreJugador", nombreJugador);
 		request.setAttribute("rol", rol);
 
-		RequestDispatcher rd = request.getRequestDispatcher("listaJugadores.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listaJugadores.jsp");
 		rd.forward(request, response);
 	}
 

@@ -12,7 +12,7 @@
 
 <form action="listaJugadores" method="post">
     <label>Elige jugador:</label>
-    <select name="idJugador">
+    <select name="listaJugadores">
         <c:forEach items="${opcionesDesplegable}" var="jugador">
             <option value="${jugador.idJugador}">${jugador.nombre}</option>
         </c:forEach>
@@ -23,23 +23,7 @@
 <c:if test="${not empty rol}">
     <h3>Jugador: ${nombreJugador}</h3>
     <h3>Rol asignado: ${rol}</h3>
-   </c:if>
-   
-   
-   		<c:if test="${nombreJugador == 'Ana'}">
-   			<p style="color:red">¡Cuidado! Este personaje es un lobo</p>
-   		</c:if>
-   		<c:if test="${nombreJugador == 'Luis'}">
-   			<p style="color:green">Este personaje puede vengarse si muere</p>
-   		</c:if>
-   		<c:if test="${nombreJugador == 'Marta'}">
-   			<p style="color:red">¡Cuidado! Este personaje es un lobo</p>
-   		</c:if>
-   		<c:if test="${nombreJugador == 'Pedro'}">
-   			<p style="color:green">Este personaje puede vengarse si muere</p>
-   		</c:if>
-   		
-   
-   
+    <p>${mensaje}</p>
+</c:if>
 </body>
 </html>

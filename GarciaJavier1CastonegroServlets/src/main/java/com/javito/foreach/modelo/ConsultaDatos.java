@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class ConsultaDatos {
 
-	public String consultaJugadores(String nombre) throws IOException {
+	public String consultaJugadores(String id) throws IOException {
 
 		String path = Thread.currentThread().getContextClassLoader().getResource("jugadores.txt").getPath();
 		File f = new File(path);
@@ -22,9 +22,9 @@ public class ConsultaDatos {
 				String idJugador = partes[0].trim();
 				String nombreJugador = partes[1].trim();
 
-				if (nombreJugador.equalsIgnoreCase(nombre)) {
+				if (idJugador ==  id) {
 
-					return nombreJugador;
+					return idJugador;
 				}
 
 			}
