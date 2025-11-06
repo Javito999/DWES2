@@ -13,10 +13,12 @@ public class Jugador implements Serializable {
 	public Jugador() {
 	}
 
-	public Jugador(int idJugador, String nombreJugador) {
-		this.idJugador = idJugador;
-		this.nombreJugador = nombreJugador;
+	public Jugador(int idJugador, String nombreJugador, String rolJugador) {
+	    this.idJugador = idJugador;
+	    this.nombreJugador = nombreJugador;
+	    this.rolJugador = rolJugador;
 	}
+
 
 	public int getIdJugador() {
 		return idJugador;

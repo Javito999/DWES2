@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Asignar Rol</title>
+</head>
+<body>
+
+    <h1>Asignador de roles - Los Lobos de Castronegro</h1>
+
+    <form th:action="@{/asignarRol}" method="post">
+
+        <label for="idJugador">Jugador:</label>
+        <select id="idJugador" name="idJugador">
+            <option disabled selected>-- Selecciona jugador --</option>
+            <option th:each="j : ${jugadores}"
+                    th:value="${j.idJugador}"
+                    th:text="${j.nombre}">
+            </option>
+        </select>
+
+        <button type="submit">Asignar rol</button>
+    </form>
+
+    
+    <div th:if="${not #strings.isEmpty(rol)}">
+        <h2>Resultado:</h2>
+        <p><strong>Jugador:</strong> <span th:text="${nombre}"></span></p>
+        <p><strong>Rol asignado:</strong> <span th:text="${rol}"></span></p>
+    </div>
+
+</body>
+</html>
