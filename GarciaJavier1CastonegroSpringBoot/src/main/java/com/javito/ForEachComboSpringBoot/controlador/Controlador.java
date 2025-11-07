@@ -33,7 +33,7 @@ public class Controlador {
 	}
 
 	@PostMapping("/asignarRol")
-	public String asignar(@RequestParam("idJugador") int idJugador, Model model) throws IOException {
+	public String asignar(@RequestParam int idJugador, Model model) throws IOException {
 
 		List<DesplegableDTO> jugadores = consulta.obtenerListaJugadores();
 		model.addAttribute("jugadores", jugadores);
@@ -41,7 +41,7 @@ public class Controlador {
 		Jugador j = servicio.asignarRol(idJugador);
 
 		model.addAttribute("nombre", j.getNombreJugador());
-		model.addAttribute("rol", j.getRolJugador()); // rol + texto personalizado
+		model.addAttribute("rol", j.getRolJugador());
 
 		return "listaJugadores";
 	}

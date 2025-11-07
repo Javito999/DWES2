@@ -18,7 +18,7 @@ public class ConsultaDatos implements IConsultaDatos {
     @Override
     public String obtenerNombrePorId(int idJugador) throws IOException {
 
-        File f = ResourceUtils.getFile("classpath:jugadores.txt");
+        File f = ResourceUtils.getFile("classpath:listaJugadores.txt");
 
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
@@ -66,7 +66,7 @@ public class ConsultaDatos implements IConsultaDatos {
     @Override
     public List<DesplegableDTO> obtenerListaJugadores() throws IOException {
 
-        File f = ResourceUtils.getFile("classpath:jugadores.txt");
+        File f = ResourceUtils.getFile("classpath:listaJugadores.txt");
 
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
