@@ -46,11 +46,7 @@
 			<artifactId>logback-classic</artifactId>
 			<version>1.4.14</version>
 		</dependency>
-		<dependency>
-			<groupId>com.javito</groupId>
-			<artifactId>EjercicioMaven</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
   </dependencies>
   <build>
     <finalName>colegio</finalName>
