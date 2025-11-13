@@ -11,8 +11,16 @@ import servicios.IAlumnosService;
 public class AlumnosServiceImp implements IAlumnosService {
 	@Override
 	public ArrayList<AlumnoDTO> obtenerAlumnos() throws SQLException {
-	IAlumnosDAO alumnos = new AlumnosDAOImp();
-	return alumnos.obtenerTodosAlumnos();
+		IAlumnosDAO alumnos = new AlumnosDAOImp();
+		return alumnos.obtenerTodosAlumnos();
+	}
+
+	@Override
+	public ArrayList<AlumnoDTO> obtenerAlumnosPorIdNombreApellido(String id, String nombre, String apellido) {
+
+		IAlumnosDAO alumnos = new AlumnosDAOImp();
+
+		return alumnos.obtenerAlumnosPorIdNombreApellido(id, nombre, apellido);
 	}
 
 }

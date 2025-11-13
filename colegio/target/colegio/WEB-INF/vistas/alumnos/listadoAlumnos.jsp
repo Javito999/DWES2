@@ -23,10 +23,36 @@
 					name="id"> <label for="nombre">Nombre Alumno</label> <input
 					type="text" id="nombre" name="nombre"><br> <label
 					for="apellido">Apellido Alumno</label> <input type="text"
-					id="apellido" name="apellido"><br> <input
+					id="apellido" name="apellido"><br> <label
+					for="familia">Familia numerosa</label> <input type="checkbox"
+					name="familia"> <label for="activo">Activo</label> <input
+					type="checkbox" name="activo"><br> <input
 					type="submit" value="Enviar">
 			</form>
 		</div>
 	</div>
+	<c:if test="${empty lista}">
+		<h2>No hay resultados que mostrar con esos filtros</h2>
+	</c:if>
+	<c:if test="${not empty lista}">
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NOMBRE</th>
+				<th>APELLIDO</th>
+				<th>MUNICIPIO</th>
+			</tr>
+			<c:forEach items="${lista}" var="alumno">
+				<tr>
+					<td>${alumno.id}</td>
+					<td>${alumno.nombre}</td>
+					<td>${alumno.apellido}</td>
+					<td>${alumno.municipio}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</c:if>
+
+
 </body>
 </html>
