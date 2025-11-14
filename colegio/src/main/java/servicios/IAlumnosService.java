@@ -9,5 +9,9 @@ public interface IAlumnosService {
 	public ArrayList<AlumnoDTO> obtenerAlumnos() throws SQLException;
 	
 	public ArrayList<AlumnoDTO> obtenerAlumnosPorIdNombreApellido(String id, String nombre, String apellido);
+	
+	public int insertarAlumno(String id, String nombre, String
+			apellido, String idMunicipio, int familiaNumerosa, int activo);
+
 
 }

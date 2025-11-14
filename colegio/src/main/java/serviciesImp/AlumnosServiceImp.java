@@ -23,4 +23,12 @@ public class AlumnosServiceImp implements IAlumnosService {
 		return alumnos.obtenerAlumnosPorIdNombreApellido(id, nombre, apellido);
 	}
 
+	@Override
+	public int insertarAlumno(String id, String nombre, String apellido, String idMunicipio, int familiaNumerosa,
+			int activo) {
+		IAlumnosDAO alumnos = new AlumnosDAOImp();
+		return alumnos.insertarAlumno(id, nombre, apellido, idMunicipio,
+		familiaNumerosa, activo);
+	}
+
 }

@@ -77,4 +77,27 @@ public class AlumnosDAOImp implements IAlumnosDAO {
 				return listaAlumnos;
 		
 	}
+
+	@Override
+	public int insertarAlumno(String id, String nombre, String apellido, String idMunicipio, int familiaNumerosa,
+			int activo) {
+		String sql = "INSERT INTO alumnos (id, nombre, apellidos, id_municipio, familia_numerosa, activo) VALUES (?, ?, ?, ?, ?, ?)";
+				PreparedStatement ps = null;
+				int resultado = 0;
+				try {
+				Connection connection = DBUtils.conexion();
+				ps = connection.prepareStatement(sql);
+				ps.setString(1, id);
+				ps.setString(2, nombre);
+				ps.setString(3, apellido);
+				ps.setString(4, idMunicipio);
+				ps.setInt(5, familiaNumerosa);
+				ps.setInt(6, activo);
+				resultado = ps.executeUpdate();
+				} catch (SQLException e) {
+				e.printStackTrace();
+				}
+				return resultado;
+
+	}
 }

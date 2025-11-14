@@ -10,5 +10,8 @@ public interface IAlumnosDAO {
 	
 	ArrayList<AlumnoDTO> obtenerAlumnosPorIdNombreApellido(String id, String
 			nombre, String apellido);
+	int insertarAlumno(String id, String nombre, String apellido,
+			String idMunicipio, int familiaNumerosa, int activo);
+	
 
 }
