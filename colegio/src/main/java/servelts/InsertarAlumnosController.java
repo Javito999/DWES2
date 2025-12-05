@@ -37,11 +37,15 @@ public class InsertarAlumnosController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		recuperarDesplegableMunicipios(request);
+		RequestDispatcher d = getServletContext().getRequestDispatcher("/WEB-INF/vistas/alumnos/insertarAlumno.jsp");
+		d.forward(request, response);
+	}
+
+	private void recuperarDesplegableMunicipios(HttpServletRequest request) {
 		IDesplegableDAO desplegableMunicipios = new DesplegableDAOImp();
 		ArrayList<DesplegableDTO> listaMunicipios = desplegableMunicipios.desplegableMunicipios();
 		request.setAttribute("desplegableMunicipios", listaMunicipios);
-		RequestDispatcher d = getServletContext().getRequestDispatcher("/WEB-INF/vistas/alumnos/insertarAlumno.jsp");
-		d.forward(request, response);
 	}
 
 	/**
@@ -61,10 +65,7 @@ public class InsertarAlumnosController extends HttpServlet {
 		Integer resultado = a.insertarAlumno(id, nombre, apellido, idMunicipio, Integer.parseInt(familiaNumerosa),
 				Integer.parseInt(activo));
 		request.setAttribute("resultado", resultado);
-		// Recuperación del desplegable
-		IDesplegableDAO desplegableMunicipios = new DesplegableDAOImp();
-		ArrayList<DesplegableDTO> listaMunicipios = desplegableMunicipios.desplegableMunicipios();
-		request.setAttribute("desplegableMunicipios", listaMunicipios);
+		recuperarDesplegableMunicipios(request);
 		RequestDispatcher d = getServletContext().getRequestDispatcher("/WEB-INF/vistas/alumnos/insertarAlumno.jsp");
 		d.forward(request, response);
 	}
