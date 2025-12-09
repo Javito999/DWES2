@@ -100,4 +100,36 @@ public class AlumnosDAOImp implements IAlumnosDAO {
 				return resultado;
 
 	}
+
+	@Override
+	public ArrayList<AlumnoDTO> obtenerAlumnosPorIdNombreApellido(String id, String nombre, String apellido,
+			int familiaNumerosa, int activo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int actualizarAlumno(String id, String nombre, String apellido, String idMunicipio, int familiaNumerosa,
+			int activo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int borrarAlumno(String id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean esFamiliaNumerosa(String idAlumno) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int contarAsignaturasMatriculadas(String idAlumno) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

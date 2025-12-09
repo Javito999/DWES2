@@ -32,5 +32,17 @@ public class DesplegableDAOImp implements IDesplegableDAO {
 	return listaMunicipios;
 	}
 
+	@Override
+	public ArrayList<DesplegableDTO> desplegableAlumnos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<DesplegableDTO> desplegableAsignaturas() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
