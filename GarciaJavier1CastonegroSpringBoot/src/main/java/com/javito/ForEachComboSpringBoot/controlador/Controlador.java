@@ -41,7 +41,7 @@ public class Controlador {
 		Jugador j = servicio.asignarRol(idJugador);
 
 		model.addAttribute("nombre", j.getNombreJugador());
-		model.addAttribute("rol", j.getRolJugador()); // rol + texto personalizado
+		model.addAttribute("rol", j.getRolJugador()); 
 
 		return "listaJugadores";
 	}
