@@ -5,13 +5,14 @@ import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.javito.ForEachComboSpringBoot.beans.Jugador;
 import com.javito.modelo.IConsultaDatos;
 
-@Service
-public class Lobos {
+@Component
+public class Lobos implements ILobos {
 
 	@Autowired
 	private IConsultaDatos consulta;
@@ -35,7 +36,7 @@ public class Lobos {
 	}
 
 	private String obtenerMensajePersonalizado(String rol) {
-		switch (rol.toLowerCase()) {
+		switch (rol) {
 		case "lobo":
 			return "¡Cuidado! Este personaje es un lobo";
 		case "vidente":
@@ -48,5 +49,11 @@ public class Lobos {
 			return "Rol no especificado.";
 		}
 
+	}
+
+	@Override
+	public String asignarRol() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
