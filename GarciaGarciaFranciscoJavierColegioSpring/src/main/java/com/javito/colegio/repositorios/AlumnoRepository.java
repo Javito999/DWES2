@@ -12,7 +12,7 @@ import com.javito.colegio.entities.AlumnoEntity;
 public interface AlumnoRepository extends CrudRepository<AlumnoEntity, Integer> {
 
 	@Query("select new com.javito.colegio.dtos.AlumnoDTO(a.id,a.nombre,a.apellidos,a.municipio.nombre,a.municipio.idMunicipio,a.famNumerosa,a.activo) "
-			+ "FROM com.adrian.colegio.entities.AlumnoEntity a "
+			+ "FROM com.javito.colegio.entities.AlumnoEntity a "
 			+ "WHERE CAST (a.id AS STRING) LIKE CONCAT ('%',:id,'%') "
 			+ "AND a.nombre LIKE CONCAT ('%',:nombre,'%') "
 			+ "AND a.apellidos LIKE CONCAT ('%',:apellidos,'%') "

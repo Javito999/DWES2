@@ -40,7 +40,7 @@ public class AlumnosController {
 
 		model.addAttribute("desplegableMunicipios", listaMunicipios);
 
-		return "alumnos/insertarAlumno";
+		return "alumnos/insertarAlumnos";
 	}
 
 	@PostMapping("/insertarAlumno")
@@ -60,7 +60,7 @@ public class AlumnosController {
 
 		model.addAttribute("resultado", resultado);
 
-		return "alumnos/insertarAlumno";
+		return "alumnos/insertarAlumnos";
 	}
 	
 	//-----------------
