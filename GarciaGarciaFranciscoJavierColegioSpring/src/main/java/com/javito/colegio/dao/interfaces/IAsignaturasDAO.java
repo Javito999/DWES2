@@ -8,11 +8,11 @@ public interface IAsignaturasDAO {
 
 	ArrayList<AsignaturaDTO> obtenerTodasAsignaturas();
 
-	ArrayList<AsignaturaDTO> obtenerAsignaturasPorId(Integer id, String nombre, String curso, int tasa, int activo);
+	ArrayList<AsignaturaDTO> obtenerAsignaturasPorId(Integer id, String nombre, String curso, Integer tasa, int activo);
 
-	int insertarAsignatura(Integer id, String nombre, String curso, int tasa, int activo);
+	int insertarAsignatura(Integer id, String nombre, String curso, Integer tasa, int activo);
 
-	int actualizarAsignatura(Integer id, String nombre, String curso, int tasa, int activo);
+	int actualizarAsignatura(Integer id, String nombre, String curso, Integer tasa, int activo);
 
 	int borrarAsignatura(int id);
 

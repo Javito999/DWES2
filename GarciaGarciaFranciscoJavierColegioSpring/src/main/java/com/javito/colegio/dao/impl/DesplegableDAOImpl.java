@@ -7,7 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import com.javito.colegio.dao.interfaces.IDesplegableDAO;
 import com.javito.colegio.dtos.DesplegableDTO;
+import com.javito.colegio.entities.AsignaturasEntity;
 import com.javito.colegio.entities.MunicipioEntity;
+import com.javito.colegio.repositorios.AsignaturaRepository;
 import com.javito.colegio.repositorios.MunicipioRepository;
 
 @Repository
@@ -15,6 +17,7 @@ public class DesplegableDAOImpl implements IDesplegableDAO {
 
 	@Autowired // Inyectamos el repository
 	private MunicipioRepository municipioRepository;
+	@Autowired AsignaturaRepository asignaturaRepository;
 
 	@Override
 	public ArrayList<DesplegableDTO> desplegableMunicipios() {
@@ -41,7 +44,9 @@ public class DesplegableDAOImpl implements IDesplegableDAO {
 
 	@Override
 	public ArrayList<DesplegableDTO> desplegableAsignaturas() {
-		// TODO Auto-generated method stub
+		Iterable<AsignaturasEntity> listaAsignaturas = asignaturaRepository.findAll();
+		
+		
 		return null;
 	}
 

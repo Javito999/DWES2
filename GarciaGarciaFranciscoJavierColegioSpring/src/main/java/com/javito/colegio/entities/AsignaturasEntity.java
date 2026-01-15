@@ -23,12 +23,12 @@ public class AsignaturasEntity {
 	private String curso;
 
 	@Column(name = "tasa")
-	private int tasa;
+	private Integer tasa;
 
 	@Column(name = "activo")
 	private int activo;
 
-	public AsignaturasEntity(int id, String nombre, String curso, int tasa, int activo) {
+	public AsignaturasEntity(int id, String nombre, String curso, Integer tasa, int activo) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -36,9 +36,9 @@ public class AsignaturasEntity {
 		this.tasa = tasa;
 		this.activo = activo;
 	}
-
+	
 	public AsignaturasEntity() {
-
+		
 	}
 
 	public int getId() {
@@ -65,11 +65,11 @@ public class AsignaturasEntity {
 		this.curso = curso;
 	}
 
-	public int getTasa() {
+	public Integer getTasa() {
 		return tasa;
 	}
 
-	public void setTasa(int tasa) {
+	public void setTasa(Integer tasa) {
 		this.tasa = tasa;
 	}
 
