@@ -76,7 +76,7 @@ public class AsignaturasController {
 			
 			int act = (activo != null) ? 1 : 0;
 
-			ArrayList<AsignaturaDTO> listaAsignaturas = asignaturasService.obtenerAsignaturas(id, nombre, curso, tasa, activo);
+			ArrayList<AsignaturaDTO> listaAsignaturas = asignaturasService.obtenerAsignaturas(id, nombre, curso, tasa, act);
 
 			model.addAttribute("lista", listaAsignaturas);
 

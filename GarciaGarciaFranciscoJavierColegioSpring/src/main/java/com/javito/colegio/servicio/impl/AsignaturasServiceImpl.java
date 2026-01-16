@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.javito.colegio.dao.impl.AsignaturasDAO;
 import com.javito.colegio.dao.interfaces.IAsignaturasDAO;
 import com.javito.colegio.dtos.AsignaturaDTO;
 import com.javito.colegio.servicio.interfaces.IAsignaturasService;
@@ -18,7 +19,7 @@ public class AsignaturasServiceImpl implements IAsignaturasService {
 
 	@Override
 	public ArrayList<AsignaturaDTO> obtenerAsignaturas() throws SQLException {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -41,10 +42,11 @@ public class AsignaturasServiceImpl implements IAsignaturasService {
 	}
 
 	@Override
-	public ArrayList<AsignaturaDTO> obtenerAsignaturas(Integer id, String nombre, String curso, Integer tasa, String activo)
+	public ArrayList<AsignaturaDTO> obtenerAsignaturas(Integer id, String nombre, String curso, Integer tasa, int activo)
 			throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return asignaturasDAO.obtenerAsignaturasPorId(id, nombre, curso, tasa, activo)
+				;
 	}
 
 
